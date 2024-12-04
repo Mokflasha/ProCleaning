@@ -1,4 +1,4 @@
-
+import '../css/style.css';
 const accordionLists = document.querySelectorAll('.accordion-list');
 
 accordionLists.forEach(accordionList => {
