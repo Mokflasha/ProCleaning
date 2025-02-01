@@ -146,7 +146,7 @@ html {
 
 
 .hero-background {
-  background: url("/girl.jpg") 50% 12% / cover no-repeat;
+  background: url("/girl.jpg") 45% 12% / cover no-repeat;
   height: 800px;
   box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
 }
@@ -468,9 +468,57 @@ html {
 		visibility: visible;
 	}
 	.hero-background {
-		height: 700px
+		height: 680px
 	}
 	.tab-conrols__link{
 		border-radius: 38px 38px 14px 14px;
 	}
 }
+
+
+@media(max-width:800px){
+	.about-open {
+		height: 600px;
+		width: 600px;
+	}
+	.about-open::after {
+		height: 600px;
+		width: 600px;
+}
+.hero-background {
+	height: 650px
+}
+}
+@media(max-width:700px){
+	.title {
+		line-height: 50px;
+	}
+	.hero-background {
+		height: 600px
+	}
+}
+@media(max-width:600px){
+	.title {
+		line-height: 40px;
+	}
+	.hero-background {
+		height: 550px
+	}
+	.about-open {
+		height: 500px;
+		width: 500px;
+	}
+	.about-open::after {
+		height: 500px;
+		width: 500px;
+}
+}
+@media(max-width:500px){
+	.hero-background {
+		background: url("/girl.jpg") 42% 12% / cover no-repeat;
+		height: 480px;
+		box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
+	}
+}
+
+

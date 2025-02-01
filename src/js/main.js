@@ -208,6 +208,18 @@ const swiper = new Swiper('.swiper', {
 	slidesPerView: 2,
 	spaceBetween: 30,
 
+	breakpoints: {
+		320:{
+			slidesPerView: 1
+		},
+		500:{
+			slidesPerView: 1.5
+		},
+		950:{
+			slidesPerView: 2
+		},
+	},
+
   // Navigation arrows
   navigation: {
     nextEl: '.button-next',
