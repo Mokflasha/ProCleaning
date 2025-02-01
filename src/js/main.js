@@ -106,7 +106,7 @@ accordionLists.forEach(accordionList => {
         const accordionContent = accordionControl.nextElementSibling;
 
         // Найти текущий открытый элемент (если есть)
-        const accordionOpenedItem = accordionList.querySelector('.accordion-list__item--opened');
+        let accordionOpenedItem = accordionList.querySelector('.accordion-list__item--opened');
 
         // Закрываем текущий открытый элемент, если он не тот же, на который кликнули
         if (accordionOpenedItem && accordionOpenedItem !== accordionItem) {
@@ -114,6 +114,14 @@ accordionLists.forEach(accordionList => {
             const openedContent = accordionOpenedItem.querySelector('.accordion-list__content');
             if (openedContent) {
                 openedContent.style.maxHeight = null;
+            }
+        }
+
+        // Специально закрываем первый элемент, если он открыт и был клик на другой
+        if (firstItem && firstItem !== accordionItem && firstItem.classList.contains('accordion-list__item--opened')) {
+            firstItem.classList.remove('accordion-list__item--opened');
+            if (firstContent) {
+                firstContent.style.maxHeight = null;
             }
         }
 
@@ -136,6 +144,7 @@ accordionLists.forEach(accordionList => {
         }
     });
 });
+
 
 
 
