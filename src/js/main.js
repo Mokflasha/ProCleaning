@@ -19,8 +19,63 @@ document.addEventListener('click', burgerInit)
     }
 
 
-		const accordionLists = document.querySelectorAll('.accordion-list');
+// 		const accordionLists = document.querySelectorAll('.accordion-list');
 		
+// accordionLists.forEach(accordionList => {
+//     // Найти первый элемент списка
+//     const firstItem = accordionList.querySelector('.accordion-list__item');
+//     if (firstItem) {
+//         const firstContent = firstItem.querySelector('.accordion-list__content');
+
+//         // Добавить класс "открыто" и установить max-height для первого элемента
+//         firstItem.classList.add('accordion-list__item--opened');
+//         if (firstContent) {
+//             firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+//         }
+//     }
+
+//     accordionList.addEventListener('click', (e) => {
+//         const accordionControl = e.target.closest('.accordion-list__control');
+//         if (!accordionControl) return; // Если клик не по контролу, не реагируем.
+
+//         e.preventDefault(); // Останавливаем стандартное поведение ссылки
+
+//         const accordionItem = accordionControl.parentElement;
+//         const accordionContent = accordionControl.nextElementSibling;
+
+//         // Проверяем, есть ли уже открытые элементы
+//         const accordionOpenedItem = accordionList.querySelector('.accordion-list__item--opened');
+//         const accordionOpenedContent = accordionList.querySelector('.accordion-list__item--opened .accordion-list__content');
+
+//         // Если был клик на другом элементе, закрываем его
+//         if (accordionOpenedItem && accordionItem !== accordionOpenedItem) {
+//             accordionOpenedItem.classList.remove('accordion-list__item--opened');
+//             if (accordionOpenedContent) {
+//                 accordionOpenedContent.style.maxHeight = null;
+//             }
+//         }
+
+//         // Переключаем открытие/закрытие текущего элемента
+//         accordionItem.classList.toggle('accordion-list__item--opened');
+
+//         // Если элемент открыт, устанавливаем max-height
+//         if (accordionItem.classList.contains('accordion-list__item--opened')) {
+//             accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+
+//             // Прокручиваем к открытому элементу
+//             setTimeout(() => {
+//                 accordionItem.scrollIntoView({
+//                     behavior: 'smooth',
+//                     block: 'center'
+//                 });
+//             }, 300);
+//         } else {
+//             accordionContent.style.maxHeight = null;
+//         }
+//     });
+// });
+const accordionLists = document.querySelectorAll('.accordion-list');
+
 accordionLists.forEach(accordionList => {
     // Найти первый элемент списка
     const firstItem = accordionList.querySelector('.accordion-list__item');
@@ -30,7 +85,12 @@ accordionLists.forEach(accordionList => {
         // Добавить класс "открыто" и установить max-height для первого элемента
         firstItem.classList.add('accordion-list__item--opened');
         if (firstContent) {
-            firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+            const setMaxHeight = () => {
+                firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+            };
+
+            setMaxHeight(); // Установить начальное значение
+            window.addEventListener('resize', setMaxHeight); // Пересчитывать при изменении экрана
         }
     }
 
@@ -74,6 +134,7 @@ accordionLists.forEach(accordionList => {
         }
     });
 });
+
 
 const tabControls = document.querySelector('.tab-conrols')
 
