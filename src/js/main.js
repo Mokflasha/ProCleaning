@@ -87,12 +87,7 @@ accordionLists.forEach(accordionList => {
         // Добавить класс "открыто" и установить max-height для первого элемента
         firstItem.classList.add('accordion-list__item--opened');
         if (firstContent) {
-            const setMaxHeight = () => {
-                firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
-            };
-
-            setMaxHeight(); // Установить начальное значение
-            window.addEventListener('resize', setMaxHeight); // Пересчитывать при изменении экрана
+            firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
         }
     }
 
@@ -117,8 +112,8 @@ accordionLists.forEach(accordionList => {
             }
         }
 
-        // Специально закрываем первый элемент, если он открыт и был клик на другой
-        if (firstItem && firstItem !== accordionItem && firstItem.classList.contains('accordion-list__item--opened')) {
+        // Закрываем первую вкладку, если она была открыта и мы кликнули по другой
+        if (firstItem && firstItem.classList.contains('accordion-list__item--opened') && firstItem !== accordionItem) {
             firstItem.classList.remove('accordion-list__item--opened');
             if (firstContent) {
                 firstContent.style.maxHeight = null;
@@ -143,9 +138,15 @@ accordionLists.forEach(accordionList => {
             accordionContent.style.maxHeight = null;
         }
     });
+
+    // Убираем повторное открытие первой вкладки при изменении размера экрана
+    window.addEventListener('resize', () => {
+        const openedItem = accordionList.querySelector('.accordion-list__item--opened .accordion-list__content');
+        if (openedItem) {
+            openedItem.style.maxHeight = openedItem.scrollHeight + 'px';
+        }
+    });
 });
-
-
 
 
 const tabControls = document.querySelector('.tab-conrols')
