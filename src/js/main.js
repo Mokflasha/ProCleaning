@@ -105,31 +105,23 @@ accordionLists.forEach(accordionList => {
         const accordionItem = accordionControl.parentElement;
         const accordionContent = accordionControl.nextElementSibling;
 
-        // Проверяем, есть ли уже открытые элементы
+        // Найти текущий открытый элемент (если есть)
         const accordionOpenedItem = accordionList.querySelector('.accordion-list__item--opened');
-        const accordionOpenedContent = accordionList.querySelector('.accordion-list__item--opened .accordion-list__content');
 
-        // Если был клик на другом элементе, закрываем его
-        if (accordionOpenedItem && accordionItem !== accordionOpenedItem) {
+        // Закрываем текущий открытый элемент, если он не тот же, на который кликнули
+        if (accordionOpenedItem && accordionOpenedItem !== accordionItem) {
             accordionOpenedItem.classList.remove('accordion-list__item--opened');
-            if (accordionOpenedContent) {
-                accordionOpenedContent.style.maxHeight = null;
-            }
-        }
-
-        // Закрываем первый элемент, если он открыт и кликнули по другому
-        if (firstItem && firstItem !== accordionItem && firstItem.classList.contains('accordion-list__item--opened')) {
-            firstItem.classList.remove('accordion-list__item--opened');
-            if (firstContent) {
-                firstContent.style.maxHeight = null;
+            const openedContent = accordionOpenedItem.querySelector('.accordion-list__content');
+            if (openedContent) {
+                openedContent.style.maxHeight = null;
             }
         }
 
         // Переключаем открытие/закрытие текущего элемента
-        accordionItem.classList.toggle('accordion-list__item--opened');
+        const isOpened = accordionItem.classList.toggle('accordion-list__item--opened');
 
         // Если элемент открыт, устанавливаем max-height
-        if (accordionItem.classList.contains('accordion-list__item--opened')) {
+        if (isOpened) {
             accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
 
             // Прокручиваем к открытому элементу
@@ -144,6 +136,7 @@ accordionLists.forEach(accordionList => {
         }
     });
 });
+
 
 
 const tabControls = document.querySelector('.tab-conrols')
