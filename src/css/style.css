@@ -54,6 +54,11 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+	width: 100%;
+}
+
+.body--opened-menu {
+	overflow: hidden;
 }
 
 .container1 {
@@ -81,6 +86,64 @@ html {
 .aa1 {
   font-family: "Lemonada";
 }
+
+.burger-icon {
+	position: relative;
+	display: none;
+	width: 50px;
+	height: 50px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 15px;
+	z-index: 11;
+	margin-right: 30px;
+	margin-left: 20px;
+	padding-top: 10px;
+}
+
+
+.burger-icon span,
+.burger-icon span::before,
+.burger-icon span::after {
+	display: block;
+	width: 30px;
+	height: 2px;
+	border-radius: 100px;
+	background-color: #ec1a1a;
+}
+
+.burger-icon span {
+	position: relative;
+}
+
+.burger-icon span::before,
+.burger-icon span::after {
+	content: '';
+	position: absolute;
+}
+
+.burger-icon span::before {
+	top: -8px;
+}
+
+.burger-icon span::after {
+	bottom: -8px;
+}
+
+.body--opened-menu .burger-icon span {
+	background: transparent;
+}
+
+.body--opened-menu .burger-icon span::before {
+	top: 0px;
+	transform: rotate(45deg);
+}
+
+.body--opened-menu .burger-icon span::after {
+	bottom: 0px;
+	transform: rotate(-45deg);
+}
+
 
 .hero-background {
   background: url("/girl.jpg") 50% 12% / cover no-repeat;
@@ -113,9 +176,13 @@ html {
   background: rgb(255, 255, 255);
   color: rgb(124, 103, 88);
   height: 80px;
+	max-width: 320px;
+	width: 100%;
   transition: all 0.4s;
   font-size: 28px;
 }
+
+
 .tab-conrols__link:hover {
   box-shadow: 0px 9px 17px -4px #70b6be;
   transition: all 0.4s;
@@ -361,4 +428,49 @@ html {
 	width: 100%;
 	background-color: #387178; 
 	height: 100%;
+}
+
+
+
+@media(max-width:900px){
+	.nav{
+		position: fixed;
+		inset: 0;
+		z-index: 10;
+		background: rgb(8, 10, 8);
+		font-size: 24px;
+
+		transform: translateY(-50%);
+		opacity: 0;
+		visibility: hidden;
+		transition: all .4s;
+		display: flex;
+		margin: 0px;
+		/* flex-direction: row; */
+		align-items: start;
+		padding-top: 70px;
+		padding-left: 20px;
+		height: 100%;
+	}
+	.nav-list{
+		color: #fff;
+		flex-direction: column;
+		gap: 25px;
+	}
+	.burger-icon {
+		position: fixed;
+		display: flex;
+	}	
+	.body--opened-menu .nav {
+		transform: translateY(0%);
+		width: 220px;
+		opacity: 1;
+		visibility: visible;
+	}
+	.hero-background {
+		height: 700px
+	}
+	.tab-conrols__link{
+		border-radius: 38px 38px 14px 14px;
+	}
 }

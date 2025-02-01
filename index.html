@@ -9,57 +9,63 @@
   </head>
   <body>
 		<header>
-			<nav class="pt-2.5 pb-2.5 px-3.5 mx-auto flex justify-between max-w-[1300px] items-center">
-				<div class="flex shrink-0">
-					<img class="" src="/logos.png" alt="">
+			<nav class="nav nav-list pt-2.5 pb-2.5 px-3.5 mx-auto flex justify-between max-w-[1300px] items-center">
+				<div class="flex shrink-0 items-center gap-[10px] ">
+					<img class="w-[58px] max-[900px]:w-[50px]" src="/logo.png" alt="">
+					<p class="ff2 text-[25px] max-[900px]:text-[20px]">ProCleaning</p>
 				</div>
-				<div class="ff flex text-xl gap-12">
-					<a class="py-1" href="#service">Услуги</a>
-					<a class="py-1" href="#porfolio">Портфолио</a>
-					<a class="py-1" href="#about">О нас</a>
+				<div class="nav-list ff flex text-xl gap-12 ">
+					<a class="nav__link py-1 gg" href="#service">Услуги</a>
+					<a class="nav__link py-1" href="#porfolio">Портфолио</a>
+					<a class="nav__link py-1" href="#about">О нас</a>
 				</div>
-				<div class="ff flex items-end text-xl gap-6">
+				<div class="nav-list ff flex items-end text-xl gap-6">
 					<p>+7 (995) 621-81-17</p>
-					<a href=""><img class="h-7 w-7" src="/whats.png" alt=""></a>
-					<a href=""><img class="h-7 w-8" src="/tg.png" alt=""></a>
+					<div class="flex row gap-[20px] items-start">
+						<a href="" class="nav__link"><img class="h-7 w-7" src="/whats.png" alt=""></a>
+						<a href="" class="nav__link"><img class="h-7 w-8" src="/tg.png" alt=""></a>
+					</div>
 				</div>
 			</nav>
+			<a class="burger-icon" href="#">
+				<span></span>
+			</a>
 			<div class=" ff4 hero-background">
 				<div class="container1">
-					<div class="title max-w-[755px] text-[52px]  pt-[133px]">
+					<div class="title max-w-[755px] text-[52px]  pt-[133px] max-[900px]:text-[40px] max-[900px]:max-w-[600px]">
 						<h1><span class="accent-color">Уборка</span> <span class=" text-[#664C3F]">квартир, домов, офисов в Воронеже</span> <span class="accent-color"><br>с выездом сегодня!</span></h1>
 					</div>
-					<p class="max-w-[630px] text-[28px] pt-[60px] ff2 text-[#644128]">Мы убираем, Вы — наслаждаетесь комфортом.</p>
+					<p class="max-w-[630px] text-[28px] pt-[60px] ff2 text-[#644128]  max-[900px]:pt-[40px]">Мы убираем, Вы — наслаждаетесь комфортом.</p>
 					<a class="button ff2 max-w-[574px] text-[28px] text-[#fff] mt-[70px] flex bg-[#387178]  duration-[400ms] justify-center items-center h-[90px] hover:bg-[#228D99]  hover:duration-[300ms]" href="">Заказать уборку</a>	
 				</div>
 			</div>
 		</header>
-		<main class="pt-[100px] mb-[100px]">
-			<div class="main_content container1 flex justify-between items-center">
+		<main class="pt-[100px] mb-[100px] max-[900px]:pt-[70px]">
+			<div class="main_content container1 flex justify-between items-center max-[800px]:flex-col max-[800px]:items-start ">
 				<div id="service">
-					<h2 class="title ff4 text-[#664C3F] text-[77px] pb-[20px]">НАШИ</h2>
-					<h2 class="title ff4 accent-color text-[77px] ml-[90px]">УСЛУГИ</h2>
+					<h2 class="title ff4 text-[#664C3F] text-[77px] pb-[20px] max-[900px]:text-[60px] max-[900px]:pb-[0px]">НАШИ</h2>
+					<h2 class="title ff4 accent-color text-[77px] ml-[90px] max-[900px]:text-[60px] max-[800px]:mb-[20px]">УСЛУГИ</h2>
 				</div>
-				<div class="max-w-[547px] text-[15px] ff2 uppercase leading-[27px]">
+				<div class="max-w-[547px] text-[15px] ff2 uppercase leading-[27px] max-[900px]:text-[12px] max-[900px]:max-w-[400px] max-[1000px]:max-w-[450px] max-[800px]:max-w-[800px] max-[770px]:text-[14px] max-[770px]:text-center" >
 					<p>Мы предоставляем широкий спектр услуг по уборке жилых и коммерческих помещений. 
 					</p>
 					<p class="pt-[20px]">От глубокой уборки до регулярного обслуживания, мы гарантируем, что ваше помещение всегда будет чистым и гигиеничным.</p>
 				</div>
 			</div>
 			<div class="container1">
-				<ul class="tab-conrols mt-[50px] flex justify-between mb-[50px]">
-					<li class="tab-conrols__item">
-							<a class="tab-conrols__link tab-conrols__link--active px-[40px]" href="#tab1">
+				<ul class="tab-conrols mt-[50px] flex justify-between mb-[50px] flex-wrap max-[770px]:justify-center max-[770px]:gap-[20px] max-[800px]:mt-[30px] max-[770px]:mb-[20px]">
+					<li class="tab-conrols__item w-full max-w-[320px] max-[1000px]:max-w-[270px] max-[870px]:max-w-[240px] max-[770px]:max-w-[225px]">
+							<a class="tab-conrols__link tab-conrols__link--active px-[20px] max-[1000px]:text-[22px] max-[870px]:text-[20px] max-[870px]:h-[70px] max-[770px]:text-[19px]" href="#tab1">
 									Клининг для дома
 							</a>
 					</li>
-					<li class="tab-conrols__item">
-							<a class="tab-conrols__link px-[86px]" href="#tab2">
+					<li class="tab-conrols__item w-full max-w-[320px] max-[1000px]:max-w-[270px] max-[870px]:max-w-[240px] max-[770px]:max-w-[225px]">
+							<a class="tab-conrols__link px-[86px]  max-[1000px]:text-[22px] max-[870px]:text-[20px] max-[870px]:h-[70px] max-[770px]:text-[19px]" href="#tab2">
 									Химчистка
 							</a>
 					</li>
-					<li class="tab-conrols__item">
-							<a class="tab-conrols__link px-[20px]" href="#tab3">
+					<li class="tab-conrols__item w-full max-w-[320px] max-[1000px]:max-w-[270px] max-[870px]:max-w-[240px] max-[770px]:max-w-[225px]">
+							<a class="tab-conrols__link px-[20px]  max-[1000px]:text-[22px] max-[870px]:text-[20px] max-[870px]:h-[70px] max-[770px]:text-[19px]" href="#tab3">
 									Клининг для бизнеса
 							</a>
 					</li>
@@ -78,10 +84,10 @@
 									</a>
 									<div class="accordion-list__content" id="general">
 											<div class="accordion-content  pl-[30px] pt-[10px] flex justify-between">
-												<div class="pic1 accordion-content__col pt-[25px] pr-[90px]">
+												<div class="pic1 accordion-content__col pt-[25px] pr-[90px] max-[770px]:pr-[15px]">
 													<img class="gen-radius1 max-h-[500px]" src="/generak-clean-pic.jpeg" alt="">
 													<div class="pic11">
-														<img class="gen-radius11 w-[237px] max-h-[320px]" src="/general.jpeg" alt="">
+														<img class="gen-radius11 w-[237px] max-h-[320px] max-[1050px]:hidden" src="/general.jpeg" alt="">
 													</div>
 												</div>
 												<div class="accordion-content__col">
@@ -203,10 +209,10 @@
 													</ul>
 													<div class="text-[28px] ff1 pt-[60px]">— От 105 ₽/м²</div>
 											</div>
-												<div class="pic2 accordion-content__col pt-[25px] pl-[90px]">
-													<img class="gen-radius1 object-fill w-[390px] h-[450px]" src="/repair11.jpeg" alt="">
+												<div class="pic2 accordion-content__col pt-[25px] pl-[90px] max-[770px]:pl-[20px]">
+													<img class="gen-radius1 object-fill w-[390px] h-[450px] " src="/repair11.jpeg" alt="">
 												<div class="pic22">
-													<img class="gen-radius11 object-fill w-[400px] max-h-[200px]" src="/repair1.jpeg" alt="">
+													<img class="gen-radius11 object-fill w-[400px] max-h-[200px] max-[770px]:hidden" src="/repair1.jpeg" alt="">
 												</div>
 											</div>
 										</div>
@@ -224,10 +230,10 @@
 								</a>
 								<div class="accordion-list__content" id="easy">
 										<div class="accordion-content  pl-[30px] pt-[20px] flex justify-between">
-											<div class="pic3 accordion-content__col pt-[25px] pr-[90px]">
+											<div class="pic3 accordion-content__col pt-[25px] pr-[90px] max-[770px]:pr-[20px]">
 												<img class="gen-radius1 max-h-[500px]" src="/regular3.jpeg" alt="">
 												<div class="pic33">
-													<img class="gen-radius11 w-[237px] max-h-[320px]" src="/regular33.jpeg" alt="">
+													<img class="gen-radius11 w-[237px] max-h-[320px] max-[770px]:hidden" src="/regular33.jpeg" alt="">
 												</div>
 											</div>
 											<div class="accordion-content__col">
@@ -300,8 +306,8 @@
 											</ul>
 											<p class="text-[17px] ff1 pt-[60px]">*стоимость дополнительных услуг уточняется у администратора</p>
 									</div>
-										<div class="pic4 accordion-content__col pt-[25px] pl-[90px]">
-										<img class="gen-radius4 object-fill w-[390px] h-[450px]" src="/dop.jpeg" alt="">
+										<div class="pic4 accordion-content__col pt-[25px] pl-[90px] max-[770px]:pl-[0px]">
+										<img class="gen-radius4 object-fill w-[390px] h-[450px] max-[770px]: h-[350px]" src="/dop.jpeg" alt="">
 										</div>
 								</div>
 								<div class=" items-center pt-[40px] pl-[30px] pb-14">
