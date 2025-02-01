@@ -79,8 +79,10 @@ const accordionLists = document.querySelectorAll('.accordion-list');
 accordionLists.forEach(accordionList => {
     // Найти первый элемент списка
     const firstItem = accordionList.querySelector('.accordion-list__item');
+    let firstContent = null;
+
     if (firstItem) {
-        const firstContent = firstItem.querySelector('.accordion-list__content');
+        firstContent = firstItem.querySelector('.accordion-list__content');
 
         // Добавить класс "открыто" и установить max-height для первого элемента
         firstItem.classList.add('accordion-list__item--opened');
@@ -112,6 +114,14 @@ accordionLists.forEach(accordionList => {
             accordionOpenedItem.classList.remove('accordion-list__item--opened');
             if (accordionOpenedContent) {
                 accordionOpenedContent.style.maxHeight = null;
+            }
+        }
+
+        // Закрываем первый элемент, если он открыт и кликнули по другому
+        if (firstItem && firstItem !== accordionItem && firstItem.classList.contains('accordion-list__item--opened')) {
+            firstItem.classList.remove('accordion-list__item--opened');
+            if (firstContent) {
+                firstContent.style.maxHeight = null;
             }
         }
 
