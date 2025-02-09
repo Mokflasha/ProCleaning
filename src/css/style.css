@@ -546,5 +546,23 @@ html {
 		border-radius: 0%;
 }
 }
+@media(max-width:400px){
+	.hero-background {
+		background: url("/girl.jpg") 15% 12% / cover no-repeat;
+		height: 480px;
+		box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
+	}
+
+	.about-open {
+		height: 420px;
+		max-width: 360px;
+		border-radius: 0%;
+	}
+	.about-open::after {
+		height: 420px;
+		max-width: 360px;
+		border-radius: 0%;
+}
+}
 
 
